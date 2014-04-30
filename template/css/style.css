@@ -1,0 +1,176 @@
+html, body {
+    font-family: sans-serif;
+    font-size: 1em;
+    margin:0;
+    padding:0;
+}
+
+div {
+    margin: 0;
+}
+
+/* H1 -> ID */
+/*h1 {
+    font-size: 3.2em;
+}*/
+
+/* h2 -> Title */
+/*h2 {
+    font-size: 2em;
+}*/
+
+a, a:link, a:visited, a:hover, a:active {
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+}
+
+/* TICKET */
+.ticket {
+    clear: both;
+	page-break-inside: avoid;
+    page-break-after: always;
+    position: relative;
+}
+
+/**********/
+/* HEADER */
+/**********/
+.header {
+    display: block;
+    left: 0;
+    margin: 0;
+    height: 20%;
+    min-height: 20%;
+    max-height: 20%;
+    padding: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+.parent {
+	margin: 0;
+	padding: 0;
+}
+
+/* HEADER BUG TYPE IMAGE */
+.bugtype {
+	height: 90%;
+	margin-right: 10px;
+}
+
+/* HEADER id */
+.id {
+    font-size: 3.2em;
+    font-weight: bold;
+    display: inline;
+}
+
+/* HEADER reporter */
+.reporter {
+    display: inline;
+    font-size: 0.78em;
+    float: right;
+}
+
+/***********/
+/* CONTENT */
+/***********/
+.content {
+    display: block;
+    margin: 0;
+    height: 69%;
+    min-height: 69%;
+    max-height: 69%;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+/* CONTENT title */
+.title {
+    font-size: 2em;
+}
+
+/* CONTENT description */
+/*.description {
+    display: block;
+}
+
+.description p {
+    text-align: justify;
+}*/
+
+/**********/
+/* FOOTER */
+/**********/
+.footer {
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: 0;
+    height: 10%;
+    min-height: 10%;
+    max-height: 10%;  
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+/* FOOTER assignee */
+.assignee {
+    bottom: 0;
+    margin-bottom: 0;
+	margin-right: 70px;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+    left: 0;
+    text-align: left;
+	float:left;
+/*    width: 30%;*/
+}
+
+.devteam {
+	bottom: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+    left: 0;
+    text-align: left;
+}
+
+/* FOOTER hasSubtasks */
+/*.hasSubtasks {
+    display: inline-block;
+    float: right;
+    font-size: 0.8em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 70%;
+}
+
+.subtask {
+    float: left;
+    height: 3em;
+    list-style-type: none;
+    margin: 0.5%;
+    padding: 0;
+    text-align: center;
+    width: 3.5em;
+}
+
+.checkbox {
+    border: 1px solid black;
+    display: inline-block;
+    height: 80%;
+    width: 90%;
+}*/
+

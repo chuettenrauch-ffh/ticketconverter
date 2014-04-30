@@ -1,0 +1,58 @@
+2012-04-03T15:50:54+02:00
+WARNING: exception 'F4h_TicketConverter_QueueBuilder_Exception' with message 'FAILURE: parameter -i is required.
+for multi input via csv use: php ticketconverter.php -i filename.csv
+for single input use: php ticketconverter.php -s -i id' in /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Factory.php:45
+Stack trace:
+#0 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Runner.php(34): F4h_TicketConverter_QueueBuilder_Factory::getQueueBuilder(Array)
+#1 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/public/ticketconverter.php(28): F4h_TicketConverter_Runner::go()
+#2 {main}
+
+2012-04-03T16:24:06+02:00
+WARNING: exception 'F4h_TicketConverter_QueueBuilder_Exception' with message 'FAILURE: parameter -i is required.
+for multi input via csv use: php ticketconverter.php -i filename.csv
+for single input use: php ticketconverter.php -s -i id' in /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Factory.php:45
+Stack trace:
+#0 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Runner.php(34): F4h_TicketConverter_QueueBuilder_Factory::getQueueBuilder(Array)
+#1 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/public/ticketconverter.php(28): F4h_TicketConverter_Runner::go()
+#2 {main}
+
+2012-04-03T16:54:24+02:00
+UNKNOWN EXCEPTION: exception 'F4h_TicketConverter_Log_Error' with message 'explode(): Empty delimiter' in /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Web/List.php:7
+Stack trace:
+#0 [internal function]: F4h_TicketConverter_Log_Error_Handler::trap(2, 'explode(): Empt...', '/home/chuettenr...', 7, Array)
+#1 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Web/List.php(7): explode('', '4794??4795??479...')
+#2 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Abstract.php(38): F4h_TicketConverter_QueueBuilder_Web_List->getIds()
+#3 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Runner.php(36): F4h_TicketConverter_QueueBuilder_Abstract->build()
+#4 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/public/ticketconverter.php(28): F4h_TicketConverter_Runner::go()
+#5 {main}
+
+2012-04-03T16:57:17+02:00
+UNKNOWN EXCEPTION: exception 'F4h_TicketConverter_Log_Error' with message 'php_strip_whitespace(4794
+4795
+4796): failed to open stream: No such file or directory' in /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Web/List.php:8
+Stack trace:
+#0 [internal function]: F4h_TicketConverter_Log_Error_Handler::trap(2, 'php_strip_white...', '/home/chuettenr...', 8, Array)
+#1 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Web/List.php(8): php_strip_whitespace('4794??4795??479...')
+#2 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Abstract.php(38): F4h_TicketConverter_QueueBuilder_Web_List->getIds()
+#3 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Runner.php(36): F4h_TicketConverter_QueueBuilder_Abstract->build()
+#4 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/public/ticketconverter.php(28): F4h_TicketConverter_Runner::go()
+#5 {main}
+
+2012-04-03T17:02:09+02:00
+UNKNOWN EXCEPTION: exception 'F4h_TicketConverter_Log_Error' with message 'preg_split(): No ending delimiter '/' found' in /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Web/List.php:8
+Stack trace:
+#0 [internal function]: F4h_TicketConverter_Log_Error_Handler::trap(2, 'preg_split(): N...', '/home/chuettenr...', 8, Array)
+#1 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Web/List.php(8): preg_split('/\s+', '4794??4795??479...')
+#2 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/QueueBuilder/Abstract.php(38): F4h_TicketConverter_QueueBuilder_Web_List->getIds()
+#3 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Runner.php(36): F4h_TicketConverter_QueueBuilder_Abstract->build()
+#4 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/public/ticketconverter.php(28): F4h_TicketConverter_Runner::go()
+#5 {main}
+
+2012-04-03T17:28:12+02:00
+FATAL: exception 'Exception' with message 'XSLTProcessor::transformToDoc(): /home/chuettenrauch/Dev/source/other/tools/ticketconverter/tmp/222.xml:13: parser error : Opening and ending tag mismatch: meta line 11 and head' in /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Data/Converter/Xsl.php:65
+Stack trace:
+#0 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Manager.php(70): F4h_TicketConverter_Data_Converter_Xsl->convert()
+#1 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/app/F4h/TicketConverter/Runner.php(41): F4h_TicketConverter_Manager->buildOutput()
+#2 /home/chuettenrauch/Dev/source/other/tools/ticketconverter/public/ticketconverter.php(28): F4h_TicketConverter_Runner::go()
+#3 {main}
+
