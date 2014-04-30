@@ -5,7 +5,6 @@ session_start();
 <html>
 <head>
 
-	testcommit
 	<title>Ticketconverter</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="shortcut icon" href="icon.ico" type="image/x-icon"/>
