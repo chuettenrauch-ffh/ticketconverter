@@ -12,7 +12,7 @@ class F4h_TicketConverter_Model_Resource_Ticket extends F4h_TicketConverter_Mode
 	protected function _save()
 	{
 		$connection = $this->_getConnection();
-		
+
 		$ticket = $this->_getModel();
 		try {
 		$query = $connection->prepare('INSERT INTO ' . self::TABLENAME . ' (project, ticket_id) VALUES (:project, :ticket_id);');

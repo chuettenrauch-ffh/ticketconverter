@@ -42,11 +42,12 @@ class F4h_TicketConverter_Runner
 		$_SESSION['notices'] = '';
 		$_SESSION['errors'] = '';
 		$_SESSION['success'] = '';
+		$_SESSION['getepic'] = '';
 
 		try {
 			//check dependencies, e.g. needed php extensions
 			F4h_TicketConverter_Dependency_Verifier::checkDependencies(F4h_TicketConverter_Config::getInstance()->getDependencies());
-			
+
 			//get QueueBuilder
 			$queueBuilder = F4h_TicketConverter_QueueBuilder_Factory::getQueueBuilder(self::getInput());
 			if ($queueBuilder) {
@@ -128,6 +129,9 @@ class F4h_TicketConverter_Runner
 						break;
 					case F4h_TicketConverter_Model_Message::NOTICE:
 						$_SESSION['notices'] = $_SESSION['notices'] . '<li>' . $message->getMessage() . '</li>';
+						break;
+					case F4h_TicketConverter_Model_Message::GETEPIC:
+						$_SESSION['getepic'] = $_SESSION['getepic'] . '<li>' . $message->getMessage() . '</li>';
 						break;
 					case F4h_TicketConverter_Model_Message::ERROR:
 						$_SESSION['errors'] = $_SESSION['errors'] . $message->getMessage() . '<br />';

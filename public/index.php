@@ -86,6 +86,14 @@ session_start();
 		<?php endif; ?>
 	</div>
 	<div class="notices">
+
+		<?php if (isset($_SESSION['getepic']) && !empty($_SESSION['getepic'])) : ?>
+			<p>Es trat folgender Fehler auf</p>
+			<ul>
+				<?php echo $_SESSION['getepic']; ?>
+			</ul>
+		<?php endif; ?>
+
 		<?php if (isset($_SESSION['notices']) && !empty($_SESSION['notices'])) : ?>
 			<p>Folgende Tickets wurden NICHT gedruckt</p>
 			<ul>

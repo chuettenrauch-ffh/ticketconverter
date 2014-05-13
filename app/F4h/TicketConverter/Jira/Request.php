@@ -65,10 +65,10 @@ class F4h_TicketConverter_Jira_Request
 	/**
 	 * @return bool|mixed
 	 */
-	public function execute()
+	public function execute($isEpic = false)
 	{
 		$response = curl_exec($this->getCurlHandler());
-		if ($this->isSuccessful()) {
+		if ($this->isSuccessful($isEpic)) {
 			return $response;
 		}
 		return false;
@@ -87,7 +87,7 @@ class F4h_TicketConverter_Jira_Request
 	 *
 	 * @return boolean
 	 */
-	protected function isSuccessful()
+	protected function isSuccessful($isEpic = false)
 	{
 		$requestInfo = curl_getinfo($this->getCurlHandler());
 		switch ($requestInfo['http_code']) {
@@ -98,9 +98,13 @@ class F4h_TicketConverter_Jira_Request
 				$ticketUrl = $requestInfo['url'];
 				$tmp = substr(strrchr($ticketUrl, '/'), 1);
 				$ticketKey = substr($tmp, 0, strrpos($tmp, '.'));
-				F4h_TicketConverter_Runner::getMsgContainer()->push(new F4h_TicketConverter_Model_Message(
-								$ticketKey . ' existiert nicht', F4h_TicketConverter_Model_Message::NOTICE
-				));
+				$message = $ticketKey . ' existiert nicht';
+				$errorlevel = F4h_TicketConverter_Model_Message::NOTICE;
+				if($isEpic){
+					$message = 'Das Epic konnte nicht auf das Ticket gedruckt werden ';
+					$errorlevel = F4h_TicketConverter_Model_Message::GETEPIC;
+				}
+				F4h_TicketConverter_Runner::getMsgContainer()->push(new F4h_TicketConverter_Model_Message($message, $errorlevel));
 				return false;
 				break;
 			case '401':

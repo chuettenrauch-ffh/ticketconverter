@@ -196,7 +196,7 @@ class F4h_TicketConverter_Model_Ticket
 	 * @param F4h_TicketConverter_Model_Ticket $data
 	 * @return $this
 	 */
-	public function setEpic(F4h_TicketConverter_Model_Ticket $data)
+	public function setEpic($data)
 	{
 		$this->epic = $data;
 		return $this;

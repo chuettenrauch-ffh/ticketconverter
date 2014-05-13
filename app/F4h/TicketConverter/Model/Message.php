@@ -7,6 +7,7 @@ class F4h_TicketConverter_Model_Message
 	const SUCCESS = 0;
 	const NOTICE = 1;
 	const ERROR = 2;
+	const GETEPIC = 3;
 
 	protected $_message;
 	protected $_type;
