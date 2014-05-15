@@ -111,19 +111,19 @@ class F4h_TicketConverter_Data_Mapper
 			try {
 				$item = $xmlData->channel->item;
 
-				$this->getStoryPoints($item, $ticket);
+				$this->fillTicketWithDataStoryPoints($item, $ticket);
 
-				$this->getDevTeam($item, $ticket);
+				$this->fillTicketWithDataDevTeam($item, $ticket);
 
-				$this->getEpic($item, $ticket);
+				$this->fillTicketWithDataEpic($item, $ticket);
 
-				$this->getEpicname($item, $ticket);
+				$this->fillTicketWithDataEpicname($item, $ticket);
 
-				$this->getSprint($item, $ticket);
+				$this->fillTicketWithDataSprint($item, $ticket);
 
-				$this->getSubtasks($item, $ticket);
+				$this->fillTicketWithDataSubtasks($item, $ticket);
 
-				$this->getParents($item, $ticket);
+				$this->fillTicketWithDataParents($item, $ticket);
 
 				$ticket->setAssignee($item->assignee);
 
@@ -215,7 +215,7 @@ class F4h_TicketConverter_Data_Mapper
 	 * @param $item
 	 * @param $ticket
 	 */
-	protected function getStoryPoints($item, $ticket)
+	protected function fillTicketWithDataStoryPoints($item, $ticket)
 	{
 		$storypoints = $item->xpath('//customfield[@id="customfield_10023"]');
 
@@ -228,7 +228,7 @@ class F4h_TicketConverter_Data_Mapper
 	 * @param $item
 	 * @param $ticket
 	 */
-	protected function getDevTeam($item, $ticket)
+	protected function fillTicketWithDataDevTeam($item, $ticket)
 	{
 		$customfields = $item->xpath('//customfield[@id="customfield_10363"]');
 		if (key_exists(0, $customfields) && $customfields[0]->customfieldname == 'Dev Team') {
@@ -240,7 +240,7 @@ class F4h_TicketConverter_Data_Mapper
 	 * @param $item
 	 * @param $ticket
 	 */
-	protected function getEpic($item, $ticket)
+	protected function fillTicketWithDataEpic($item, $ticket)
 	{
 		$epic = $item->xpath('//customfield[@id="customfield_10860"]');
 		if (key_exists(0, $epic) && $epic[0]->customfieldname == 'Epic Link') {
@@ -252,7 +252,7 @@ class F4h_TicketConverter_Data_Mapper
 	 * @param $item
 	 * @param $ticket
 	 */
-	protected function getEpicname($item, $ticket)
+	protected function fillTicketWithDataEpicname($item, $ticket)
 	{
 		$epicname = $item->xpath('//customfield[@id="customfield_10861"]');
 		if (key_exists(0, $epicname) && $epicname[0]->customfieldname == 'Epic Name') {
@@ -264,7 +264,7 @@ class F4h_TicketConverter_Data_Mapper
 	 * @param $item
 	 * @param $ticket
 	 */
-	protected function getSprint($item, $ticket)
+	protected function fillTicketWithDataSprint($item, $ticket)
 	{
 		$sprint = $item->xpath('//customfield[@id="customfield_10560"]');
 		if (key_exists(0, $sprint) && $sprint[0]->customfieldname == 'Sprint') {
@@ -276,7 +276,7 @@ class F4h_TicketConverter_Data_Mapper
 	 * @param $item
 	 * @param $ticket
 	 */
-	protected function getSubtasks($item, $ticket)
+	protected function fillTicketWithDataSubtasks($item, $ticket)
 	{
 		if (count($item->subtasks->subtask) > 0) {
 			$ticket->setHasSubtasks(true);
@@ -287,7 +287,7 @@ class F4h_TicketConverter_Data_Mapper
 	 * @param $item
 	 * @param $ticket
 	 */
-	protected function getParents($item, $ticket)
+	protected function fillTicketWithDataParents($item, $ticket)
 	{
 		if ($parent = $item->parent) {
 			$ticket->setParent($this->getTicket(substr($parent, 4)));

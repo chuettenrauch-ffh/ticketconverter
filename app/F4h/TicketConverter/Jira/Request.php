@@ -102,7 +102,7 @@ class F4h_TicketConverter_Jira_Request
 				$errorlevel = F4h_TicketConverter_Model_Message::NOTICE;
 				if($isEpic){
 					$message = 'Das Epic konnte nicht auf das Ticket gedruckt werden ';
-					$errorlevel = F4h_TicketConverter_Model_Message::GETEPIC;
+					$errorlevel = F4h_TicketConverter_Model_Message::INFORMATIONAL;
 				}
 				F4h_TicketConverter_Runner::getMsgContainer()->push(new F4h_TicketConverter_Model_Message($message, $errorlevel));
 				return false;

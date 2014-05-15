@@ -1,5 +1,7 @@
 <?php
 session_start();
+error_reporting(-1);
+echo "test";
 ?>
 <!DOCTYPE html>
 <html>
@@ -87,10 +89,10 @@ session_start();
 	</div>
 	<div class="notices">
 
-		<?php if (isset($_SESSION['getepic']) && !empty($_SESSION['getepic'])) : ?>
+		<?php if (isset($_SESSION['informational']) && !empty($_SESSION['informational'])) : ?>
 			<p>Es trat folgender Fehler auf</p>
 			<ul>
-				<?php echo $_SESSION['getepic']; ?>
+				<?php echo $_SESSION['informational']; ?>
 			</ul>
 		<?php endif; ?>
 

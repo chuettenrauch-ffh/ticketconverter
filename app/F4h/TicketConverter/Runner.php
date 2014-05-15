@@ -42,7 +42,7 @@ class F4h_TicketConverter_Runner
 		$_SESSION['notices'] = '';
 		$_SESSION['errors'] = '';
 		$_SESSION['success'] = '';
-		$_SESSION['getepic'] = '';
+		$_SESSION['informational'] = '';
 
 		try {
 			//check dependencies, e.g. needed php extensions
@@ -73,7 +73,7 @@ class F4h_TicketConverter_Runner
 								case F4h_TicketConverter_Config::OUTPUT_PDF:
 									exec('sh ' . F4h_TicketConverter_Config::getInstance()->getApacheFopPath() . ' ' . $outputPath . ' output.pdf');
 									//comment the following line out for testing purpose
-									exec('lp -d ' . F4h_TicketConverter_Config::getInstance()->getPrinterName() . ' -o media=A6 -o landscape output.pdf');
+//									exec('lp -d ' . F4h_TicketConverter_Config::getInstance()->getPrinterName() . ' -o media=A6 -o landscape output.pdf');
 									$outputPath = substr($outputPath, 0, strrpos($outputPath, '.')) . '.pdf';
 									break;
 								//redirect to output.html
@@ -98,14 +98,16 @@ class F4h_TicketConverter_Runner
 			));
 			F4h_TicketConverter_Log_Exception_Handler::trap($dependencyException);
 		} catch (F4h_TicketConverter_Exception_Abstract $tcException) {
+			var_dump($tcException->getMessage());
 			if ($tcException->getLogLevel() === F4h_TicketConverter_Log_Exception_Handler::FATAL) {
 				self::getMsgContainer()->push(new F4h_TicketConverter_Model_Message(
-								'Es ist ein schwerwiegender Fehler aufgetreten.', F4h_TicketConverter_Model_Message::ERROR));
+					$tcException->getMessage(), F4h_TicketConverter_Model_Message::ERROR));
 			}
 			F4h_TicketConverter_Log_Exception_Handler::trap($tcException);
 		} catch (Exception $exception) {
+			var_dump($exception->getMessage());
 			self::getMsgContainer()->push(new F4h_TicketConverter_Model_Message(
-							'Es ist ein schwerwiegender Fehler aufgetreten.', F4h_TicketConverter_Model_Message::ERROR));
+				$exception->getMessage() , F4h_TicketConverter_Model_Message::ERROR));
 			F4h_TicketConverter_Log_Exception_Handler::trap($exception);
 		}
 
@@ -130,8 +132,8 @@ class F4h_TicketConverter_Runner
 					case F4h_TicketConverter_Model_Message::NOTICE:
 						$_SESSION['notices'] = $_SESSION['notices'] . '<li>' . $message->getMessage() . '</li>';
 						break;
-					case F4h_TicketConverter_Model_Message::GETEPIC:
-						$_SESSION['getepic'] = $_SESSION['getepic'] . '<li>' . $message->getMessage() . '</li>';
+					case F4h_TicketConverter_Model_Message::INFORMATIONAL:
+						$_SESSION['informational'] = $_SESSION['informational'] . '<li>' . $message->getMessage() . '</li>';
 						break;
 					case F4h_TicketConverter_Model_Message::ERROR:
 						$_SESSION['errors'] = $_SESSION['errors'] . $message->getMessage() . '<br />';
