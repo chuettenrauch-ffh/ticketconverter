@@ -98,14 +98,12 @@ class F4h_TicketConverter_Runner
 			));
 			F4h_TicketConverter_Log_Exception_Handler::trap($dependencyException);
 		} catch (F4h_TicketConverter_Exception_Abstract $tcException) {
-			var_dump($tcException->getMessage());
 			if ($tcException->getLogLevel() === F4h_TicketConverter_Log_Exception_Handler::FATAL) {
 				self::getMsgContainer()->push(new F4h_TicketConverter_Model_Message(
 					$tcException->getMessage(), F4h_TicketConverter_Model_Message::ERROR));
 			}
 			F4h_TicketConverter_Log_Exception_Handler::trap($tcException);
 		} catch (Exception $exception) {
-			var_dump($exception->getMessage());
 			self::getMsgContainer()->push(new F4h_TicketConverter_Model_Message(
 				$exception->getMessage() , F4h_TicketConverter_Model_Message::ERROR));
 			F4h_TicketConverter_Log_Exception_Handler::trap($exception);

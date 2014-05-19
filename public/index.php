@@ -1,7 +1,5 @@
 <?php
 session_start();
-error_reporting(-1);
-echo "test";
 ?>
 <!DOCTYPE html>
 <html>
