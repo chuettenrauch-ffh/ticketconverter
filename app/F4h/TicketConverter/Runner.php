@@ -73,7 +73,7 @@ class F4h_TicketConverter_Runner
 								case F4h_TicketConverter_Config::OUTPUT_PDF:
 									exec('sh ' . F4h_TicketConverter_Config::getInstance()->getApacheFopPath() . ' ' . $outputPath . ' output.pdf');
 									//comment the following line out for testing purpose
-//									exec('lp -d ' . F4h_TicketConverter_Config::getInstance()->getPrinterName() . ' -o media=A6 -o landscape output.pdf');
+									exec('lp -d ' . F4h_TicketConverter_Config::getInstance()->getPrinterName() . ' -o media=A6 -o landscape output.pdf');
 									$outputPath = substr($outputPath, 0, strrpos($outputPath, '.')) . '.pdf';
 									break;
 								//redirect to output.html
