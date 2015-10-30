@@ -1,6 +1,6 @@
 /*
  Ticketconverter
- (C) Copyright 2015 fashion4home GmbH <www.fashionforhome.de>
+ (C) Copyright 2012 fashion4home GmbH <www.fashionforhome.de>
  Authors Christoph Jaecks, Claudia Hüttenrauch, Tino Stöckel
 
  license GPL-3.0

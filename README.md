@@ -1,6 +1,6 @@
 Ticketconverter
 
-(C) Copyright 2015 by fashion4home GmbH
+(C) Copyright 2012 by fashion4home GmbH
 
 Authors Christoph Jaecks, Tino Stöckel
 

@@ -9,7 +9,7 @@
  * @author Claudia Hüttenrauch <claudia.hüttenrauch@fashionforhome.de>
  * @author Tino Stöckel <tino.stoeckel@fashionforhome.de>
  *
- * @copyright (c) 2015 by fashion4home GmbH <www.fashionforhome.de>
+ * @copyright (c) 2012 by fashion4home GmbH <www.fashionforhome.de>
  * @license GPL-3.0
  * @license http://opensource.org/licenses/GPL-3.0 GNU GENERAL PUBLIC LICENSE
  *
