@@ -6,7 +6,6 @@
  * @package ticketconverter-tests
  *
  * @author Christoph Jaecks <christoph.jaecks@fashionforhome.de>
- * @author Claudia Hüttenrauch <claudia.hüttenrauch@fashionforhome.de>
  * @author Tino Stöckel <tino.stoeckel@fashionforhome.de>
  *
  * @copyright (c) 2012 by fashion4home GmbH <www.fashionforhome.de>
