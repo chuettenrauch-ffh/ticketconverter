@@ -7,3 +7,10 @@ input via simple webinterface (copy url of jira-searchresult-xml-view into form 
 2012-01-13
 refactoring
 
+2014
+bugfixes and minor adjustments
+
+2015-30-10
+Added header files, authors, licence, to release software as open source under the GPL 3.0 licence
+(Edited by Michael Neuhaus)
+

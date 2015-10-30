@@ -1,3 +1,10 @@
+/*
+ Ticketconverter
+ (C) Copyright 2015 fashion4home GmbH <www.fashionforhome.de>
+ Authors Christoph Jaecks, Claudia Hüttenrauch, Tino Stöckel
+
+ license GPL-3.0
+ */
 var TicketConverter = TicketConverter || {};
 
 TicketConverter.Confirmation = function(project, ids, formId)
